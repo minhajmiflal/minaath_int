@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-midnight text-pearl antialiased;
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(42, 62, 99, 0.36), transparent 45%),
+    radial-gradient(circle at 80% 5%, rgba(13, 59, 75, 0.35), transparent 35%);
+}
+
+section[id] {
+  scroll-margin-top: 7rem;
+}
+
+.container-site {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply rounded-full bg-champagne px-6 py-3 text-sm font-semibold text-midnight transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne;
+}
+
+.btn-secondary {
+  @apply rounded-full border border-slate-200/30 px-6 py-3 text-sm text-pearl transition hover:bg-white/10;
+}
+
+.mesh {
+  background:
+    radial-gradient(circle at 22% 28%, rgba(29, 65, 92, 0.8), transparent 40%),
+    radial-gradient(circle at 76% 22%, rgba(15, 68, 81, 0.62), transparent 42%),
+    linear-gradient(140deg, #071326, #0c1d35 50%, #132744);
+}
+
+.trade-routes path {
+  fill: none;
+  stroke: rgba(201, 174, 123, 0.72);
+  stroke-width: 0.5;
+  stroke-dasharray: 2 2;
+  animation: dash 12s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.panel {
+  @apply rounded-2xl border border-slate-300/20 bg-white/5 p-6 text-slate-200/90;
+}
+
+.panel h4 {
+  @apply mb-2 font-serif text-2xl text-pearl;
+}
+
+.panel ul {
+  @apply mt-3 grid gap-1 text-sm;
+}
+
+.field {
+  @apply w-full rounded-xl border border-slate-300/20 bg-midnight/40 px-4 py-3 text-pearl placeholder:text-slate-400 focus:border-champagne/70 focus:outline-none;
+}
+
+.pill {
+  @apply rounded-full border border-slate-300/30 bg-white/5 px-4 py-1;
+}
+
+.footer-title {
+  @apply mb-2 font-serif text-lg text-pearl;
+}
+
+.heritage-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(165, 178, 199, 0.1) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(165, 178, 199, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
